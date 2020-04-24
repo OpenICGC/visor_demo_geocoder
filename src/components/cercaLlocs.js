@@ -112,7 +112,7 @@ function createBuffer(map, lat, lon){
 
 export default function createCercaLlocs(parent, map) {
     
-    const html = `<div class="ui fluid icon input"><input class="searchboxinput" type="text" placeholder="Anar a... (Municipi)"><i class="search icon"></i></div><div class="mygrid"></div>`;
+    const html = `<div class="ui fluid icon input"><input class="searchboxinput" type="text" placeholder="Anar a... (adreça)"><i class="search icon"></i></div><div class="mygrid"></div>`;
 
     const template = document.createElement("template");
 	template.innerHTML = html;

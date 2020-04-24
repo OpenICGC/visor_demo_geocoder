@@ -14,7 +14,7 @@ export default function createHeader() {
         <div class="ten wide column">
             <h2 id="headerTitle" class="ui center  aligned block header">
                 <div class="content">
-                    TITLE
+                    Sortir amb nens 1km
                 </div>
             </h2>
         </div>

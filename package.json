@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@geostarters/eslint-config": "^0.0.6",
+    "@turf/buffer": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
     "jquery": "^3.5.0",
     "mapbox-gl": "^1.9.1",
     "mapbox-gl-controls": "^1.6.2"

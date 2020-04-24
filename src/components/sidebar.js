@@ -4,25 +4,50 @@ import "../semantic/semantic.css";
 
 import "./sidebar.css";
 
-export default function createSidebar(parent) {
+export default async function createSidebar(parent) {
 	
 	const html = `<div id="sidebar" class="movein">
 		<div id="toggleBtn" class="ui icon button">
 			<i class="angle left icon"></i>
 		</div>
 		<div class="ui segment" id="panel">
-			<a class="item">
-				<i class="home icon"></i>
-				Home
-			</a>
-			<a class="item">
-				<i class="block layout icon"></i>
-				Topics
-			</a>
-			<a class="item">
-				<i class="smile icon"></i>
-				Friends
-			</a>
+			<div class="ui one column grid">
+				<div class="row">
+					<div class="column">
+
+						<div id="cercaLlocs"></div>
+
+					</div>
+
+					<div class="column">
+						<div class="ui divider"></div>
+					</div>
+
+					<div class="ui three mini item secondary menu mm">
+						<div class="item">
+							<a title="Informació" href="http://betaportal.icgc.cat" target="_blank">
+								<i class="large info circle link white icon"></i>
+							</a>
+						</div>
+
+						<div class="item">
+							<a href="https://twitter.com/share" class="twitter-share-button" {count} data-text="Desconfinament 1K" data-via="icgcat" data-hashtags="Catalunya">Tweet</a>
+							<script>
+								! function(d, s, id) {
+									var js, fjs = d.getElementsByTagName(s)[0],
+										p = /^http:/.test(d.location) ? 'http' : 'https';
+									if (!d.getElementById(id)) {
+										js = d.createElement(s);
+										js.id = id;
+										js.src = p + '://platform.twitter.com/widgets.js';
+										fjs.parentNode.insertBefore(js, fjs);
+									}
+								}(document, 'script', 'twitter-wjs');
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>`;
 	const template = document.createElement("template");
@@ -59,5 +84,7 @@ export default function createSidebar(parent) {
 		dimPage: false
 	}).sidebar("attach events",".ui.launch.button");
 	*/
+
+	return true;
 
 }

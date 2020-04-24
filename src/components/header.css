@@ -12,6 +12,7 @@
 #headerLogo .logo{
     position: relative;
     min-height: 50px;
+    max-height: calc(var(--header-height) - 10px);
     min-width: 120px;
 }
 

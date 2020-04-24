@@ -1,3 +1,3 @@
 export default function createFooter() {
-	return "Footer desde componentes!";
+	return "Distància d'1 Km. Calculada en línia recta. No es calcula la distància real seguint els carrers";
 }

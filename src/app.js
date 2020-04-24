@@ -4,9 +4,10 @@ import createRoot from "./components/root";
 import createFooter from "./components/footer";
 import createMap from "./components/map";
 import createSidebar from "./components/sidebar";
+import createCercaLlocs from "./components/cercaLlocs";
 import "./css/app.css";
 
-export default () => {
+export default async () => {
 
   console.log("Init app...");
 
@@ -16,8 +17,10 @@ export default () => {
 
   document.getElementById("footer").innerHTML = createFooter();
 
-  createMap();
+  const map = createMap();
 
-  createSidebar(document.getElementById("root"));
+  await createSidebar(document.getElementById("root"));
+
+  createCercaLlocs(document.getElementById("cercaLlocs"), map);
 
 }

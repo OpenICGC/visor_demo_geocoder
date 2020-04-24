@@ -11,7 +11,7 @@ export default function createMap() {
 		minZoom: 2,
 		maxZoom: 18,
 		hash: true,
-		style: "https://geoserveis.icgc.cat/contextmaps/icgc.json",
+		style: "https://tilemaps.icgc.cat/tileserver/styles/positron.json",
 		center: [1.88979, 41.69589],
 		zoom: 13.61,
 		attributionControl: false,
@@ -27,21 +27,53 @@ export default function createMap() {
 		compact: true
 	}));
 
-	map.addControl(new StylesControl({
-		styles: [
-		  {
-			label: 'Orto',
-			styleName: 'Mapbox Streets',
-			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/orto-inun-rc.json',
-		  }, {
-			label: 'Topo',
-			styleName: 'totpo',
-			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/topo-inun-rc.json',
-		  },
-		],
-		onChange: (style) => console.log(style),
-		// map.setStyle(style.styleUrl);
-	  }), 'top-right');
+	map.on('click', function(e) {
+		console.log(e.point);
+	});
+
+	map.on('load', function(){
+
+	map.addSource('adreca', {
+		type: 'geojson',
+		data: {
+			type: 'FeatureCollection',
+			features: [
+			]
+		}
+	});
+
+	map.addSource('buffer', {
+		type: 'geojson',
+		data: {
+			type: 'FeatureCollection',
+			features: [
+			]
+		}
+	});
+
+	map.addLayer({
+		id: 'adreca',
+		type: 'circle',
+		source: 'adreca',
+		paint: {
+			'circle-radius': 6,
+			'circle-stroke-color': "#ffffff",
+			'circle-stroke-width': 1,
+			'circle-color': '#486DE0'
+		}
+	});
+
+	map.addLayer({
+		id: 'buffer',
+		type: 'fill',
+		source: 'buffer',
+		paint: {
+			'fill-color': '#486DE0',
+			'fill-opacity': 0.4
+		}
+	}, 'adreca');
+
+	});
 
 	return map;
 }

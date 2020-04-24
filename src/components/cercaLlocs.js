@@ -102,7 +102,6 @@ function createPoint(map, lat, lon){
 function createBuffer(map, lat, lon){
     const pt = point([lon, lat]);
     const buffered = buffer(pt, 1, {units: 'kilometers'});
-    console.log(buffered);
     map.getSource("buffer").setData({
         type: 'FeatureCollection',
         features: [

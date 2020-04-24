@@ -2,6 +2,9 @@ import mapboxgl from "mapbox-gl";
 import StylesControl from "mapbox-gl-controls/lib/styles";
 import CompassControl from 'mapbox-gl-controls/lib/compass';
 import ZoomControl from 'mapbox-gl-controls/lib/zoom';
+import buffer from "@turf/buffer";
+import { point } from "@turf/helpers";
+
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-controls/theme.css";
 
@@ -27,51 +30,69 @@ export default function createMap() {
 		compact: true
 	}));
 
-	map.on('click', function(e) {
-		console.log(e.point);
-	});
-
 	map.on('load', function(){
 
-	map.addSource('adreca', {
-		type: 'geojson',
-		data: {
-			type: 'FeatureCollection',
-			features: [
-			]
-		}
-	});
+		map.addSource('adreca', {
+			type: 'geojson',
+			data: {
+				type: 'FeatureCollection',
+				features: [
+				]
+			}
+		});
 
-	map.addSource('buffer', {
-		type: 'geojson',
-		data: {
-			type: 'FeatureCollection',
-			features: [
-			]
-		}
-	});
+		map.addSource('buffer', {
+			type: 'geojson',
+			data: {
+				type: 'FeatureCollection',
+				features: [
+				]
+			}
+		});
 
-	map.addLayer({
-		id: 'adreca',
-		type: 'circle',
-		source: 'adreca',
-		paint: {
-			'circle-radius': 6,
-			'circle-stroke-color': "#ffffff",
-			'circle-stroke-width': 1,
-			'circle-color': '#486DE0'
-		}
-	});
+		map.addLayer({
+			id: 'adreca',
+			type: 'circle',
+			source: 'adreca',
+			paint: {
+				'circle-radius': 6,
+				'circle-stroke-color': "#ffffff",
+				'circle-stroke-width': 1,
+				'circle-color': '#486DE0'
+			}
+		});
 
-	map.addLayer({
-		id: 'buffer',
-		type: 'fill',
-		source: 'buffer',
-		paint: {
-			'fill-color': '#486DE0',
-			'fill-opacity': 0.4
-		}
-	}, 'adreca');
+		map.addLayer({
+			id: 'buffer',
+			type: 'fill',
+			source: 'buffer',
+			paint: {
+				'fill-color': '#486DE0',
+				'fill-opacity': 0.4
+			}
+		}, 'adreca');
+
+		map.on('click', function(e) {
+
+			const {lng: lon, lat} = e.lngLat;
+
+			map.getSource("adreca").setData({
+				type: 'FeatureCollection',
+				features: [
+				{type: "Feature", geometry: {type: "Point", coordinates: [lon, lat]}}
+				]
+			});
+
+			const pt = point([lon, lat]);
+			const buffered = buffer(pt, 1, {units: 'kilometers'});
+			map.getSource("buffer").setData({
+				type: 'FeatureCollection',
+				features: [
+					buffered
+				]
+			});
+
+		});
 
 	});
 

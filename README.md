@@ -1,6 +1,7 @@
 
-# Fast and tiny JS and HTML webmap template
+# Desconfinament 1Km.
 
+Demo https://openicgc.github.io/desconfinament_1k/
 
 ### Steps
 

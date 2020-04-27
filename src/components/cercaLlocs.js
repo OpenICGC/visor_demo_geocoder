@@ -1,5 +1,5 @@
 import $ from "jquery";
-import buffer from "@turf/buffer";
+import turfCircle from '@turf/circle';
 import { point } from "@turf/helpers";
 
 import "./cercaLlocs.css";
@@ -101,11 +101,11 @@ function createPoint(map, lat, lon){
 
 function createBuffer(map, lat, lon){
     const pt = point([lon, lat]);
-    const buffered = buffer(pt, 1, {units: 'kilometers'});
+    const circle = turfCircle(pt, 1, {units: 'kilometers'});
     map.getSource("buffer").setData({
         type: 'FeatureCollection',
         features: [
-            buffered
+            circle
         ]
     });
 }

@@ -74,23 +74,7 @@ export default function createMap() {
 
 		map.on('click', function(e) {
 
-			const {lng: lon, lat} = e.lngLat;
-
-			map.getSource("adreca").setData({
-				type: 'FeatureCollection',
-				features: [
-				{type: "Feature", geometry: {type: "Point", coordinates: [lon, lat]}}
-				]
-			});
-
-			const pt = point([lon, lat]);
-			const circle = turfCircle(pt, 1, {units: 'kilometers'});
-			map.getSource("buffer").setData({
-				type: 'FeatureCollection',
-				features: [
-					circle
-				]
-			});
+			
 
 		});
 

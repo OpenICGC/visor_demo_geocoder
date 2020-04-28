@@ -14,7 +14,7 @@ export default function createHeader() {
         <div class="ten wide column">
             <h2 id="headerTitle" class="ui center  aligned block header">
                 <div class="content">
-                    Sortir amb nens 1km
+                    Visor demo geocoder ICGC
                 </div>
             </h2>
         </div>

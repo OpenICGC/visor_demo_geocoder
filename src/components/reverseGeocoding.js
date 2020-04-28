@@ -4,38 +4,9 @@ import { point } from "@turf/helpers";
 import "./cercaLlocs.css";
 
 const _options = {
-    domain: "https://aws.icgc.cat/cerca_pelias/autocomplete?text="
+    domain: "https://aws.icgc.cat/cerca_pelias/reverse?"
 };
 
-function initControls(parent, map) {
-
-    parent.find(".searchboxinput").on("keyup", function(event) {
-        if (event.which == 13) {
-            checkInput(parent, map, true);
-            event.preventDefault();
-        } else {
-            checkInput(parent, map, false);
-        }
-    });
-
-    parent.on("click", "li a", function(e) {
-        if ($(this).attr("data")) {
-            const coords = $(this).attr("data").split("#");
-            zoomTo(parent, map, coords[0], coords[1])
-        }
-    });
-
-}
-
-function checkInput(parent, map, keyOrigen) {
-    const self = this;
-    const _toponim = parent.find(".searchboxinput").val();
-    if (_toponim && _toponim.length > 2) {
-        sendRequest(parent, map, _toponim, keyOrigen);
-    } else {
-        parent.find(".mygrid").fadeOut();
-    }
-}
 
 function sendRequest(parent, map, _toponim, keyOrigen) {
     const self = this;
@@ -96,15 +67,4 @@ function createPoint(map, lat, lon){
     });
 }
 
-export default function createCercaLlocs(parent, map) {
-    
-    const html = `<div class="ui fluid icon input"><input class="searchboxinput" type="text" placeholder="Anar a... (adreça)"><i class="search icon"></i></div><div class="mygrid"></div>`;
 
-    const template = document.createElement("template");
-	template.innerHTML = html;
-
-    $(parent).append(template.content.cloneNode(true));
-    
-    initControls($(parent), map);
-
-}

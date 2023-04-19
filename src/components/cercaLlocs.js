@@ -4,7 +4,7 @@ import { point } from "@turf/helpers";
 import "./cercaLlocs.css";
 
 const _options = {
-    domain: "https://aws.icgc.cat/cerca_pelias/autocomplete?text="
+    domain: "https://eines.icgc.cat/geocodificador/autocompletar?text="
 };
 
 function initControls(parent, map) {
@@ -39,8 +39,14 @@ function checkInput(parent, map, keyOrigen) {
 
 function sendRequest(parent, map, _toponim, keyOrigen) {
     const self = this;
+
+    let mapCenter = map.getCenter();
+    //let _focus = "&focus.point.lat=" + mapCenter.lat + "&focus.point.lon=" + mapCenter.lng;
+    let _layer = "&layers=topo1,topo2,address";
+    let _size = "&size=5";
+
     $.ajax({
-        url: `${_options.domain}${ _toponim}`,
+        url: `${_options.domain}${ _toponim}${_layer}${_size}`,
         method: "GET",
         dataType: "json",
         success: function(data) {

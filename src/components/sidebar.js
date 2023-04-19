@@ -29,7 +29,7 @@ export default async function createSidebar(parent) {
 								<i class="large info circle link white icon"></i>
 							</a>
 						</div>
-
+						<!--
 						<div class="item">
 							<a href="https://twitter.com/share" class="twitter-share-button" {count} data-text="Visor demo geocoder" data-via="icgcat" data-hashtags="Catalunya">Tweet</a>
 							<script>
@@ -45,6 +45,7 @@ export default async function createSidebar(parent) {
 								}(document, 'script', 'twitter-wjs');
 							</script>
 						</div>
+						-->
 					</div>
 				</div>
 			</div>

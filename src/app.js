@@ -15,7 +15,7 @@ export default async () => {
 
   document.getElementById("root").innerHTML = createRoot();
 
-  document.getElementById("footer").innerHTML = createFooter();
+  //document.getElementById("footer").innerHTML = createFooter();
 
   const map = createMap();
 

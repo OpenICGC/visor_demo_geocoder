@@ -4,7 +4,8 @@ Aquest és un visor de proves del nou geocodificador del ICGC. Està feta amb no
 
 La url del nou geocodificador és: https://eines.icgc.cat/geocodificador/autocompletar?text=
 
-Demo https://openicgc.github.io/visor_demo_geocoder/
+Projecte original: https://github.com/OpenICGC/visor_demo_geocoder 
+Demo projecte original: https://openicgc.github.io/visor_demo_geocoder/
 
 ### Steps
 

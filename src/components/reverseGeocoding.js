@@ -4,7 +4,7 @@ import { point } from "@turf/helpers";
 import "./cercaLlocs.css";
 
 const _options = {
-    domain: "https://aws.icgc.cat/cerca_pelias/reverse?"
+    domain: "https://eines.icgc.cat/geocodificador/invers?"
 };
 
 

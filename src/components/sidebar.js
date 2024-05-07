@@ -31,7 +31,7 @@ export default async function createSidebar(parent) {
 						</div>
 						<!--
 						<div class="item">
-							<a href="https://twitter.com/share" class="twitter-share-button" {count} data-text="Visor demo geocoder" data-via="icgcat" data-hashtags="Catalunya">Tweet</a>
+							<a href="https://twitter.com/share" class="twitter-share-button" {count} data-text="Geocodificador ICGC" data-via="icgcat" data-hashtags="Catalunya">Tweet</a>
 							<script>
 								! function(d, s, id) {
 									var js, fjs = d.getElementsByTagName(s)[0],

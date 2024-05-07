@@ -2,7 +2,6 @@
   "name": "fast_webmap_template",
   "version": "1.0.0",
   "description": "Fast webMap temaplate",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
@@ -14,8 +13,8 @@
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "cssnano": "^4.1.10"
+    "babel-preset-env": "^0.0.0",
+    "cssnano": "^7.0.1"
   },
   "dependencies": {
     "@geostarters/eslint-config": "^0.0.6",

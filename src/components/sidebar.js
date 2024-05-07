@@ -22,7 +22,7 @@ export default async function createSidebar(parent) {
 
 					<div class="ui three mini item secondary menu mm">
 						<div class="item">
-							<a title="Informació" href="https://www.icgc.cat" target="_blank">
+							<a title="Informació" href="https://eines.icgc.cat/geocodificador/api-docs/" target="_blank">
 								<i class="large info circle link white icon"></i>
 							</a>
 						</div>

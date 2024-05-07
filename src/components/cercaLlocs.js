@@ -6,7 +6,7 @@ import "./cercaLlocs.css";
 const _options = {
     domain: "https://eines.icgc.cat/geocodificador/autocompletar?text="
 };
-
+ 
 function initControls(parent, map) {
 
     parent.find(".searchboxinput").on("keyup", function(event) {

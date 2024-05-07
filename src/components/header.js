@@ -20,7 +20,7 @@ export default function createHeader() {
         </div>
         <div class="right floated two wide column">
             <div id="headerInfo">
-                <a title="Informació" href="http://betaportal.icgc.cat" target="_blank">
+                <a title="Informació" href="https://www.icgc.cat" target="_blank">
                     <i class="large info circle link white icon"></i>
                 </a>
             </div>

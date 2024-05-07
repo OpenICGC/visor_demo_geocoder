@@ -1,7 +1,4 @@
 import $ from "jquery";
-import "../semantic/semantic";
-import "../semantic/semantic.css";
-
 import "./sidebar.css";
 
 export default async function createSidebar(parent) {
@@ -25,7 +22,7 @@ export default async function createSidebar(parent) {
 
 					<div class="ui three mini item secondary menu mm">
 						<div class="item">
-							<a title="Informació" href="http://betaportal.icgc.cat" target="_blank">
+							<a title="Informació" href="https://www.icgc.cat" target="_blank">
 								<i class="large info circle link white icon"></i>
 							</a>
 						</div>

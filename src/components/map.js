@@ -14,7 +14,7 @@ export default function createMap() {
 		minZoom: 2,
 		maxZoom: 18,
 		hash: true,
-		style: "https://tilemaps.icgc.cat/tileserver/styles/positron.json",
+		style: "https://geoserveis.icgc.cat/contextmaps/icgc_mapa_base_gris.json",
 		center: [1.88979, 41.69589],
 		zoom: 13.61,
 		attributionControl: false,

@@ -2,20 +2,20 @@
   "name": "fast_webmap_template",
   "version": "1.0.0",
   "description": "Fast webMap temaplate",
-  "main": "src/index.html",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir docs --public-url ./",
+    "build": "parcel build src/index.html --dist-dir docs --public-url ./",
     "preinstall": "npx npm-force-resolutions"
   },
   "author": "Geostarters",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.24.5",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "cssnano": "^4.1.10",
-    "minimist": "^1.2.5"
+    "cssnano": "^4.1.10"
   },
   "dependencies": {
     "@geostarters/eslint-config": "^0.0.6",
@@ -24,9 +24,11 @@
     "@turf/helpers": "^6.1.4",
     "jquery": "^3.5.0",
     "mapbox-gl": "^1.9.1",
-    "mapbox-gl-controls": "^1.6.2"
+    "mapbox-gl-controls": "^1.6.2",
+    "minimist": "^1.2.8"
   },
-  "resolutions": {
-    "minimist": "^1.2.5"
-  }
+  "@parcel/transformer-css": {
+    "errorRecovery": true
+  },
+  "resolutions": {}
 }

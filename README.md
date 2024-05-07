@@ -11,6 +11,7 @@ Demo projecte original: https://openicgc.github.io/visor_demo_geocoder/
 
 1. Install globally parcel
 ```
+npm install -g parcel
 npm install -g parcel-bundler
 ```
 
